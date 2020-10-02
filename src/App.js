@@ -1,10 +1,15 @@
-import React from 'react'; 
-import './App.css';
+import React from 'react';
+import General from './components/General';
+import Education from './components/Education';
+import Work from './components/Work';
+
 
 function App() {
   return (
     <div className="App">
-      testing 123
+      <General/>
+      <Education/>
+      <Work/>
     </div>
   );
 }
