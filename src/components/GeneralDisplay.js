@@ -3,7 +3,9 @@ import React from 'react';
 const GeneralDisplay = props => {
     return (
         <div>
-            <h1>general display</h1>
+            <h4>Name: {props.name}</h4>
+            <h4>Email Address: {props.email}</h4>
+            <h4>Phone Number: {props.phone}</h4>
         </div>
     );
 };
