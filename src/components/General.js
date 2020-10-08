@@ -33,7 +33,7 @@ const General = () => {
     return (
         <div>
             <GeneralDisplay name={name} email={email} phone={phone}/>
-            <button onClick={handleClick}>Update</button>
+            <button onClick={handleClick}>{displayForm ? 'Done' : 'Update'}</button>
             <div>
             {displayForm ?
                 <form onSubmit={handleSubmit}>
