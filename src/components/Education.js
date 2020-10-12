@@ -6,10 +6,13 @@ const Education = () => {
     const [major, setMajor] = useState('');
     const [date, setDate] = useState('');
 
+    const [props, setProps] = useState('')
+
     const [displayForm, setDisplayForm] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
+        setProps([school, major, date]);
     }
 
     const handleChange = event => {
@@ -31,7 +34,7 @@ const Education = () => {
 
     return (
         <div>
-            <EducationDisplay school={school} major={major} date={date}/>
+            <EducationDisplay props={props}/>
             <button onClick={handleClick}>{displayForm ? 'Done' : 'Update'}</button>
             <div>
             {displayForm ?

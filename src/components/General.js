@@ -6,11 +6,14 @@ const General = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    
+    const [props, setProps] = useState('')
 
     const [displayForm, setDisplayForm] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
+        setProps([name, email, phone]);
     }
 
     const handleChange = event => {
@@ -32,7 +35,7 @@ const General = () => {
 
     return (
         <div>
-            <GeneralDisplay name={name} email={email} phone={phone}/>
+            <GeneralDisplay props={props}/>
             <button onClick={handleClick}>{displayForm ? 'Done' : 'Update'}</button>
             <div>
             {displayForm ?
