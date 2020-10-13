@@ -8,14 +8,16 @@ const Work = () => {
     const [start, setStart] = useState('');
     const [end, setEnd] = useState('');
     const [reason, setReason] = useState('');
-    
+
     const [props, setProps] = useState('')
 
     const [displayForm, setDisplayForm] = useState(false);
+    const [displayInfo, setDisplayInfo] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
         setProps([company, position, tasks, start, end, reason]);
+        setDisplayInfo(true);
     }
 
     const handleChange = event => {
@@ -46,7 +48,8 @@ const Work = () => {
 
     return (
         <div>
-            <WorkDisplay props={props}/>
+        <h2>Work History</h2>
+            <div>{displayInfo ? <WorkDisplay props={props}/> : null}</div>
             <button onClick={handleClick}>{displayForm ? 'Done' : 'Update'}</button>
             <div>
             {displayForm ?

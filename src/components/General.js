@@ -10,10 +10,12 @@ const General = () => {
     const [props, setProps] = useState('')
 
     const [displayForm, setDisplayForm] = useState(false);
+    const [displayInfo, setDisplayInfo] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
         setProps([name, email, phone]);
+        setDisplayInfo(true);
     }
 
     const handleChange = event => {
@@ -35,7 +37,8 @@ const General = () => {
 
     return (
         <div>
-            <GeneralDisplay props={props}/>
+            <h2>About Me:</h2>
+            <div>{displayInfo ? <GeneralDisplay props={props}/> : null}</div>
             <button onClick={handleClick}>{displayForm ? 'Done' : 'Update'}</button>
             <div>
             {displayForm ?
